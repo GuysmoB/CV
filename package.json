@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp clean && gulp pages && gulp styles && node ./pdf-gen.js",
+    "build": "gulp clean && gulp pages && gulp styles && gulp assets && gulp scripts && node ./pdf-gen.js",
+    "build:fr": "gulp clean && gulp pages && gulp styles && gulp assets && gulp scripts && node ./pdf-gen.js --lang=fr",
+    "build:en": "gulp clean && gulp pages && gulp styles && gulp assets && gulp scripts && node ./pdf-gen.js --lang=en",
+    "dev": "gulp dev",
     "pdf": "node ./pdf-gen.js",
+    "test": "node --test",
+    "prebuild": "node ./scripts/install-chrome.js",
+    "postinstall": "node ./scripts/install-chrome.js",
     "gulp-clean": "gulp clean",
     "gulp-page": "gulp pages",
-    "gulp-style": "gulp styles"
+    "gulp-style": "gulp styles",
+    "gulp-asset": "gulp assets"
   },
   "repository": {
     "type": "git",
@@ -30,7 +37,10 @@
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
     "html-pdf-node": "^1.0.8",
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^24.15.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
   },
   "browserslist": [
     "ie >= 10",

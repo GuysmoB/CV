@@ -1,4 +1,5 @@
 var autoprefixer = require("gulp-autoprefixer");
+var browserSync = require("browser-sync").create();
 var csso = require("gulp-csso");
 var del = require("del");
 var gulp = require("gulp");
@@ -23,6 +24,14 @@ gulp.task("styles", function () {
   );
 });
 
+gulp.task("assets", function () {
+  return gulp.src("./asset/**/*").pipe(gulp.dest("./dist/asset"));
+});
+
+gulp.task("scripts", function () {
+  return gulp.src(["./app.js"]).pipe(gulp.dest("./dist"));
+});
+
 // Gulp task to minify HTML files
 gulp.task("pages", function () {
   return gulp
@@ -31,7 +40,42 @@ gulp.task("pages", function () {
       htmlmin({
         collapseWhitespace: true,
         removeComments: false,
-      })
+      }),
     )
     .pipe(gulp.dest("./dist"));
 });
+
+gulp.task("reload", function (done) {
+  browserSync.reload();
+  done();
+});
+
+gulp.task("serve", function (done) {
+  browserSync.init({
+    server: "./dist",
+    port: 3000,
+    open: false,
+    notify: false,
+  });
+  done();
+});
+
+gulp.task("watch", function () {
+  gulp.watch(["./*.html"], gulp.series("pages", "reload"));
+  gulp.watch(["./app.js"], gulp.series("scripts", "reload"));
+  gulp.watch(["./style.css"], gulp.series("styles", "reload"));
+  gulp.watch(["./asset/**/*"], gulp.series("assets", "reload"));
+});
+
+gulp.task(
+  "dev",
+  gulp.series(
+    "clean",
+    "pages",
+    "styles",
+    "assets",
+    "scripts",
+    "serve",
+    "watch",
+  ),
+);
