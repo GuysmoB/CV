@@ -92,7 +92,7 @@ a {
   align-items: start;
   display: grid;
   gap: 5mm;
-  grid-template-columns: 20mm minmax(0, 1fr) 54mm;
+  grid-template-columns: 25mm minmax(0, 1fr) 54mm;
   margin-bottom: 2.5mm;
   margin-top: 0;
 }
@@ -101,9 +101,9 @@ a {
   border: 2px solid #f5f3f7;
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(40, 36, 80, 0.12);
-  height: 18mm;
+  height: 25mm;
   overflow: hidden;
-  width: 18mm;
+  width: 25mm;
 }
 
 .hero-photo img {
@@ -156,6 +156,7 @@ a {
   display: grid;
   font-style: normal;
   gap: 1.2mm;
+  margin-left: 12mm;
 }
 
 .contact-item {
@@ -214,7 +215,12 @@ h2 {
 
 .skills-layout {
   display: grid;
-  gap: 2mm;
+  gap: 3mm 6mm;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.skill-group {
+  min-width: 0;
 }
 
 .skill-group h3 {
