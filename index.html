@@ -128,7 +128,7 @@
           </div>
         </section>
 
-        <section class="section experiences">
+        <section class="section">
           <h2>EXPÉRIENCES</h2>
 
           <div class="experience-list">
@@ -146,33 +146,17 @@
                   géographiques, météorologiques et temps réel.
                 </p>
 
-                <h5 class="subheading">Squid X / TACTiCS</h5>
+                <h5 class="subheading">SquidX / Tactics</h5>
                 <p>
-                  Participation à la
-                  <strong>refonte architecturale</strong> d'une application Electron multiplateforme dédiée à l'optimisation de routes maritimes en temps réel.
+                  Reprise et refonte d'une application legacy complexe, avec forte dette technique, nécessitant une réappropriation progressive de la logique métier et de
+                  l'architecture existante.
                 </p>
                 <ul class="experience-points">
-                  <li>
-                    Refonte de l'architecture et remplacement de Redux par un
-                    <strong>pattern Repository</strong>.
-                  </li>
-                  <li>
-                    Séparation des responsabilités en sous-projets
-                    <strong>Main / UI / Core</strong>.
-                  </li>
-                  <li>Développement de fonctionnalités de cartographie météo interactive.</li>
-                  <li>
-                    Intégration du flux de données
-                    <strong>GPS / NMEA</strong> en temps réel pour le suivi de position.
-                  </li>
-                  <li>
-                    Implémentation de fonctionnalités de routage avancé :
-                    <strong>isochrones, polaires</strong>.
-                  </li>
-                  <li>
-                    Import / export d'itinéraires aux formats
-                    <strong>GPX, KML et RTZ</strong>.
-                  </li>
+                  <li><strong>Réappropriation</strong> de la logique métier à partir d'une base de code existante non typée et insuffisamment documentée.</li>
+                  <li>Refonte de l'architecture et remplacement de Redux par un pattern <strong>Repository</strong>, afin d'isoler la logique métier et les accès aux données.</li>
+                  <li>Séparation des responsabilités en sous-projets Main / UI / Core pour améliorer la maintenabilité et l'évolution du produit.</li>
+                  <li>Mise en place d'un <strong>Design System</strong> sous forme de librairie indépendante et d'un <strong>SDK</strong> pour les API externes.</li>
+                  <li>Développement de fonctionnalités de <strong>cartographie météo interactive</strong>.</li>
                 </ul>
 
                 <h5 class="subheading">GeoMonarch</h5>
@@ -190,14 +174,9 @@
                 <p><strong>Développement autonome</strong> d'une plateforme Next.js à partir de zéro pour présenter les produits et gérer les abonnements utilisateurs.</p>
                 <ul class="experience-points">
                   <li>Conception et développement de l'application.</li>
-                  <li>
-                    Intégration des abonnements et paiements avec
-                    <strong>Stripe</strong>.
-                  </li>
-                  <li>
-                    Mise en place du suivi produit avec
-                    <strong>PostHog</strong>.
-                  </li>
+                  <li>Intégration des abonnements et paiements avec <strong>Stripe</strong>.</li>
+                  <li>Mise en place du suivi produit avec <strong>PostHog</strong>.</li>
+                  <li>Intégration de la <strong>cartographie météo interactive</strong></li>
                 </ul>
 
                 <p class="stack">
@@ -247,7 +226,7 @@
               </div>
             </article>
 
-            <article class="experience-item">
+            <article class="experience-item" style="margin-top: 40px">
               <div class="experience-meta">
                 <h3 class="company-name">NODE GUARDIANS</h3>
                 <span class="experience-date">Sept. 2022 - Déc. 2022</span>
@@ -286,12 +265,14 @@
                 <ul class="experience-points">
                   <li><strong>Fortuneo :</strong> Développement des fonctionnalités de gestion de l'assurance vie client (React).</li>
                   <li><strong>Operis :</strong> Refonte de la plateforme de dématérialisation des permis de construire (React, Node.js).</li>
-                  <li><strong>Prim'Holstein France :</strong> Développement d'une application tablette de saisie zootechnique et calcul de score génétique (Node.js, Swagger).</li>
-                  <li><strong>Crédit Mutuel &amp; Amaline :</strong> Migrations de versions React (v16 vers v18) et application web de gestion de campagnes commerciales.</li>
+                  <li><strong>Prim'Holstein France :</strong> Développement d'une application tablette de saisie zootechnique et calcul de score génétique (Node.js).</li>
+                  <li><strong>Crédit Mutuel :</strong> Migrations de versions React (v16 vers v18).</li>
+                  <li><strong>Amaline :</strong> Application web de gestion de campagnes commerciales (React).</li>
                 </ul>
+
                 <p class="stack">
                   <span>Stack :</span>
-                  <span>React, Node.js, JavaScript, Tailwind, Swagger, Git, SVN</span>
+                  <span>React, Node.js, TypeScript, Tailwind, Git</span>
                 </p>
               </div>
             </article>

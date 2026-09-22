@@ -79,7 +79,6 @@ a {
 }
 
 .page::before {
-  background: var(--top-bar);
   content: "";
   height: 4mm;
   left: 0;
@@ -416,20 +415,31 @@ h2 {
 }
 
 @page {
+  background: #ffffff;
   margin: 0;
   size: a4;
 }
 
 @media print {
+  html,
+  body,
+  .cv-document,
+  .page {
+    background: #ffffff !important;
+    color: var(--text);
+  }
+
   body {
-    background: #ffffff;
+    background: #ffffff !important;
   }
 
   .cv-document {
+    background: #ffffff;
     padding: 0;
   }
 
   .page {
+    background: #ffffff;
     box-shadow: none;
     margin: 0;
   }

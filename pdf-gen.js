@@ -7,9 +7,7 @@ const { normalizeLanguage, getPdfFileName } = require("./language-config");
 const app = express();
 const customPort = Number(process.env.CV_PORT || 0);
 const cliLanguage = process.argv.find((arg) => arg.startsWith("--lang="));
-const requestedLanguage = normalizeLanguage(
-  cliLanguage ? cliLanguage.split("=")[1] : process.env.CV_LANG || "fr",
-);
+const requestedLanguage = normalizeLanguage(cliLanguage ? cliLanguage.split("=")[1] : process.env.CV_LANG || "fr");
 const outputFile = getPdfFileName(requestedLanguage);
 
 app.use(express.static(path.resolve(__dirname, "dist")));
@@ -43,6 +41,7 @@ const server = app.listen(customPort, async () => {
         bottom: "0",
         left: "0",
       },
+      background: "#ffffff",
       preferCSSPageSize: true,
       printBackground: true,
     });
